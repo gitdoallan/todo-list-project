@@ -34,3 +34,9 @@ function completedLi(e) {
     }
 }
 selectOl.addEventListener('dblclick', completedLi)
+
+let eraseBtn = document.getElementById('apaga-tudo')
+function erase() {
+    selectOl.innerHTML = ''
+}
+eraseBtn.addEventListener('click', erase)
