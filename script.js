@@ -25,3 +25,12 @@ function changeBg(e) {
     e.target.classList.add('selected')
 }
 selectOl.addEventListener('click', changeBg)
+
+function completedLi(e) {
+    if (e.target.classList.contains('completed')) {
+        e.target.classList.remove('completed')
+    } else {
+        e.target.classList.add('completed')
+    }
+}
+selectOl.addEventListener('dblclick', completedLi)
