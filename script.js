@@ -61,3 +61,32 @@ function removeSelected() {
     }
 }
 removeSelectedBtn.addEventListener('click', removeSelected)
+
+const moveUpBtn = document.getElementById('mover-cima')
+function moveUp() {
+    for (let i=0;i<olChild.length;i+=1) {
+        if (olChild[i].classList.contains('selected') && olChild[i] !== olChild[0]) {
+            saveUpInfo = olChild[i-1].innerText
+            olChild[i-1].innerText = olChild[i].innerText
+            olChild[i-1].classList.add('selected')
+            olChild[i].innerText = saveUpInfo
+            olChild[i].classList.remove('selected')
+        }
+    }
+}
+moveUpBtn.addEventListener('click', moveUp)
+
+const moveDownBtn = document.getElementById('mover-baixo')
+function moveDown() {
+    let childSize = olChild.length-1
+    for (let i=childSize; i>=0; i-=1) {
+        if (olChild[i].classList.contains('selected') && olChild[i] !== olChild[childSize]) {
+            saveDownInfo = olChild[i+1].innerText
+            olChild[i+1].innerText = olChild[i].innerText
+            olChild[i+1].classList.add('selected')
+            olChild[i].innerText = saveDownInfo
+            olChild[i].classList.remove('selected')
+        }
+    }
+}
+moveDownBtn.addEventListener('click', moveDown)
