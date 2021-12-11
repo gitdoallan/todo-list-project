@@ -8,3 +8,20 @@ function createLi() {
     getInput.value = ''
 }
 createBtn.addEventListener('click', createLi)
+
+let selectInput = document.getElementById('texto-tarefa')
+function submitEnter(e) {
+    if (e.key === 'Enter') {
+        createLi()
+    }
+}
+selectInput.addEventListener('keyup', submitEnter)
+
+let olChild = selectOl.children
+function changeBg(e) {
+    for (let i=0;i<olChild.length;i+=1) {
+        olChild[i].classList.remove('selected')
+    }
+    e.target.classList.add('selected')
+}
+selectOl.addEventListener('click', changeBg)

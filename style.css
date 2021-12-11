@@ -1,0 +1,11 @@
+.selected {
+  background-color: gray;
+
+  /* stylelint-disable-next-line no-missing-end-of-source-newline */
+}
+
+.completed {
+  text-decoration: line-through solid black;
+
+  /* stylelint-disable-next-line no-missing-end-of-source-newline */
+}
