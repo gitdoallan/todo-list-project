@@ -90,3 +90,37 @@ function moveDown() {
     }
 }
 moveDownBtn.addEventListener('click', moveDown)
+
+const saveBtn = document.getElementById('salvar-tarefas')
+function saveList() {
+    let theList = []
+    let theListClasses = []
+    for (let i=0;i<olChild.length;i+=1) {
+        theList.push(olChild[i].innerText)
+        theListClasses.push(olChild[i].className)
+    }
+    localStorage.setItem('getText', JSON.stringify(theList))
+    localStorage.setItem('getClasses', JSON.stringify(theListClasses))
+    console.log('saved!')
+}
+saveBtn.addEventListener('click', saveList)
+
+function getTheList() {
+    if (localStorage.getItem('getText') === null) {
+        localStorage.setItem('getText', JSON.stringify([]))
+        localStorage.setItem('getClasses', JSON.stringify([]))
+    } else {
+        let getList = JSON.parse(localStorage.getItem('getText'))
+        let getClasses = JSON.parse(localStorage.getItem('getClasses'))
+        for (let i=0;i<getList.length;i+=1) {
+            getLi = document.createElement('li')
+            selectOl.appendChild(getLi)
+            getLi.innerHTML = getList[i]
+            getLi.className = getClasses[i]
+        }
+    }
+}
+
+window.onload = function() {
+    getTheList();
+  }
