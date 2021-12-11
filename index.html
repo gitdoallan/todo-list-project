@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,12 +11,22 @@
     <header class="header">
         <h1>Minha Lista de Tarefas</h1>
         <span id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</span>
+    </header>
+    <main class="content">
 
         <input type="texto-tarefa" id="texto-tarefa"> <button id="criar-tarefa">Criar tarefa</button>
         <br><br>
-        <button id="apaga-tudo">Apaga tudo</button>
+        <button id="apaga-tudo">Apaga tudo</button> <button id="remover-finalizados">Remover finalizados</button>
 
         <ol id="lista-tarefas">
         </ol>
-    </header>
+
+        <button id="salvar-tarefas">Salvar tarefas</button>
+        <button id="remover-selecionado">Remover selecionado</button>
+        <br><br>
+        <button id="mover-cima">Mover para cima</button>
+        <button id="mover-baixo">Mover para baixo</button>
+    </main>
+    <script src="script.js"></script>
 </body>
+</html>

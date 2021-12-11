@@ -40,3 +40,38 @@ function erase() {
     selectOl.innerHTML = ''
 }
 eraseBtn.addEventListener('click', erase)
+
+let removeBtn = document.getElementById('remover-finalizados')
+function removeCompleted() {
+    for (let i=0;i<olChild.length;i+=1) {
+        if (olChild[i].classList.contains('completed')) {
+            olChild[i].remove()
+            i-=1
+        }
+    }
+}
+removeBtn.addEventListener('click', removeCompleted)
+
+const removeSelectedBtn = document.getElementById('remover-selecionado')
+function removeSelected() {
+    for (let i=0;i<olChild.length;i+=1) {
+        if (olChild[i].classList.contains('selected')) {
+            olChild[i].remove()
+        }
+    }
+}
+removeSelectedBtn.addEventListener('click', removeSelected)
+
+const moveUpBtn = document.getElementById('mover-cima')
+function moveUp() {
+    for (let i=0;i<olChild.length;i+=1) {
+        if (olChild[i].classList.contains('selected') && olChild[i] !== olChild[0]) {
+            saveUpInfo = olChild[i-1].innerText
+            olChild[i-1].innerText = olChild[i].innerText
+            olChild[i-1].classList.add('selected')
+            olChild[i].innerText = saveUpInfo
+            olChild[i].classList.remove('selected')
+        }
+    }
+}
+moveUpBtn.addEventListener('click', moveUp)
