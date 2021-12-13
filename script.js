@@ -65,12 +65,14 @@ removeSelectedBtn.addEventListener('click', removeSelected)
 const moveUpBtn = document.getElementById('mover-cima')
 function moveUp() {
     for (let i=0;i<olChild.length;i+=1) {
+
         if (olChild[i].classList.contains('selected') && olChild[i] !== olChild[0]) {
             saveUpInfo = olChild[i-1].innerText
+            saveUpClass = olChild[i-1].className
+            olChild[i-1].className = olChild[i].className
             olChild[i-1].innerText = olChild[i].innerText
-            olChild[i-1].classList.add('selected')
+            olChild[i].className = saveUpClass
             olChild[i].innerText = saveUpInfo
-            olChild[i].classList.remove('selected')
         }
     }
 }
@@ -82,10 +84,11 @@ function moveDown() {
     for (let i=childSize; i>=0; i-=1) {
         if (olChild[i].classList.contains('selected') && olChild[i] !== olChild[childSize]) {
             saveDownInfo = olChild[i+1].innerText
+            saveDownClass = olChild[i+1].className
             olChild[i+1].innerText = olChild[i].innerText
-            olChild[i+1].classList.add('selected')
+            olChild[i+1].className = olChild[i].className
             olChild[i].innerText = saveDownInfo
-            olChild[i].classList.remove('selected')
+            olChild[i].className = saveDownClass
         }
     }
 }
@@ -121,6 +124,14 @@ function getTheList() {
     }
 }
 
+function delayLoadList() {
+    selectOl.innerHTML = `<div class="loading"></div>`
+    setTimeout(function() {
+        selectOl.innerHTML = ''
+        getTheList()
+    }, 1000)
+}
+
 window.onload = function() {
-    getTheList();
-  }
+    delayLoadList();
+   }

@@ -1,0 +1,26 @@
+-webkit-keyframes loading to {
+  transform: rotate(360deg);
+}
+
+@-webkit-keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.loading {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  vertical-align: -0.125em;
+  border: 5px solid #182a46;
+  border-right-color: transparent;
+  border-radius: 50%;
+  -webkit-animation: 0.75s linear infinite loading;
+  animation: 0.75s linear infinite loading;
+}/*# sourceMappingURL=icons.css.map */

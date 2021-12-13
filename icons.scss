@@ -1,0 +1,26 @@
+-webkit-keyframes loading {
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes loading {
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+.loading {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    vertical-align: -.125em;
+    border: 5px solid rgb(24, 42, 70);
+    border-right-color: transparent;
+    border-radius: 50%;
+    -webkit-animation: .75s linear infinite loading;
+    animation: .75s linear infinite loading;
+}
+

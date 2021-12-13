@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,24 +8,46 @@
     <title>To Do List</title>
 </head>
 <body>
-    <header class="header">
-        <h1>Minha Lista de Tarefas</h1>
-        <span id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</span>
-    </header>
+
     <main class="content">
 
-        <input type="texto-tarefa" id="texto-tarefa"> <button id="criar-tarefa">Criar tarefa</button>
-        <br><br>
-        <button id="apaga-tudo">Apaga tudo</button> <button id="remover-finalizados">Remover finalizados</button>
+        <header class="header">
+            <h1>Minha Lista de Tarefas</h1>
+            <span id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</span>
+        </header>
+
+        <div class="create-task">
+        <input type="texto-tarefa" id="texto-tarefa" placeholder="digite uma tarefa aqui e pressione 'enter'">
+        <button id="criar-tarefa">+</button>
+        </div>
 
         <ol id="lista-tarefas">
         </ol>
 
-        <button id="salvar-tarefas">Salvar tarefas</button>
-        <button id="remover-selecionado">Remover selecionado</button>
-        <br><br>
-        <button id="mover-cima">Mover para cima</button>
-        <button id="mover-baixo">Mover para baixo</button>
+        <div class="buttons">
+
+            <div class="move">
+                <button id="mover-cima"><img src="img/arrow-circle-up-solid.svg"></button>
+                <button id="mover-baixo"><img src="img/arrow-circle-down-solid.svg"></button>
+            </div>
+
+            <div class="other-tasks">
+                <div class="button">
+                    <button id="salvar-tarefas"><img src="img/download-solid.svg"> Salvar</button>
+                </div>
+                <div class="button">
+                    <button id="apaga-tudo"><img src="img/trash-alt-solid.svg"> Tudo</button>
+                </div>
+                <div class="button">
+                    <button id="remover-finalizados"><img src="img/trash-alt-solid.svg"> Finalizados</button>
+                </div>
+                <div class="button">
+                    <button id="remover-selecionado"><img src="img/trash-alt-solid.svg"> Selecionado</button>
+                </div>
+
+            </div>
+        </div>
+
     </main>
     <script src="script.js"></script>
 </body>
