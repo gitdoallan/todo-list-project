@@ -124,14 +124,5 @@ function getTheList() {
     }
 }
 
-function delayLoadList() {
-    selectOl.innerHTML = `<div class="loading"></div>`
-    setTimeout(function() {
-        selectOl.innerHTML = ''
-        getTheList()
-    }, 1000)
-}
 
-window.onload = function() {
-    delayLoadList();
-   }
+getTheList()
